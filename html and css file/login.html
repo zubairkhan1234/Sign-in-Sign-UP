@@ -18,12 +18,12 @@
             <p> Sign in to GitHub </p>
         </div>
         <div class="for-form">
-            <form action="#">
+            <form action="#" onsubmit="abc()" >
                 <label for="user[login]">Username or email address</label> <br>
-                <input type="text" name="user[login]" required> <br>
-                <label for="user[password]">Password</label> <span> <a href="#"> Forgot password? </a></span> <br>
-                <input type="password" required> <br>
-                <button type="submit">Sign in</button>
+                <input type="text" name="user[login]" id="useremail" required> <br>
+                <label for="user[password]" >Password</label>    <span><a href="#">Forgot password?</a></span><br>
+                <input type="password" name="user[password]" id="user-password" required> <br>
+                <button >Sign in</button>
             </form>
         </div>
         <div class="for-creating-a-new-account">
@@ -40,6 +40,9 @@
             </ul>
         </div>
     </div>
+
+
+    <script src="./app.js"></script>
 </body>
 
 </html>
