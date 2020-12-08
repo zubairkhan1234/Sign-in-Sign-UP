@@ -2,6 +2,8 @@ var user_Names = [];
 var user_Emails = [];
 var user_Passwords = [];
 
+
+
 function signUpInformation() {
 
 
@@ -19,17 +21,12 @@ function signUpInformation() {
 
 }
 
-
-
-
-
 var user_Names2 = JSON.parse(localStorage.getItem("name"))
 var user_Email2 = JSON.parse(localStorage.getItem("email"))
 var user_Password2 = JSON.parse(localStorage.getItem("password"))
- 
+
 function loginform() {
 
-console.log(user_Email2, user_Password2 )
 
     const userEmail = document.getElementById("email").value;
     const userPassword = document.getElementById("password").value;
@@ -60,5 +57,9 @@ console.log(user_Email2, user_Password2 )
 
 
     return false;
-}
+}  
+
+document.getElementById("userN").innerHTML = "Name :" + " " + user_Names2
+document.getElementById("userE").innerHTML = "Email :" + " " + user_Email2
+document.getElementById("userP").innerHTML = "Password :" + " " + user_Password2
 
