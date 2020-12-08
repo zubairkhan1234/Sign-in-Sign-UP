@@ -15,7 +15,6 @@
             <div class="logo">
                 <img src="./images/github.png" alt="">
             </div>
-
             <div class="navigation">
                 <ul>
                     <li><a href="#"> Why GitHub</a></li>
@@ -32,8 +31,7 @@
                 <a class="active" href="#">Sign up</a>
             </div>
         </nav>
-
-
+        <div class="clear"></div>
 
         <div class="container">
             <div class="paragraph">
@@ -45,37 +43,31 @@
                 </p>
             </div>
             <div class="for-form">
-                <form action="#" onsubmit="signUpInformation()">
-                    <label for="username">Usr Name</label> <br>
-                    <input type="text" name="username" id="userName" required> <br>
+                <form onsubmit="return signUpInformation()">
 
-                    <label for="useremail">Email</label> <br>
-                    <input type="email" name="useremail" id="userEmail" required> <br>
-
-                    <label for="userpassword">Password</label> <br>
-                    <input type="password" name="userpassword" id="userPassword" required> <br>
-
+                    <label>User Name</label>
+                    <input type="text" id="userName" required> <br>
+                    <label>Email</label>
+                    <input type="email" id="userEmail" required> <br>
+                    <label>password</label>
+                    <input type="password" id="userPassword" required> <br>
                     <p>
                         Make sure it's at least 15 characters OR at least 8 characters including a number and a
                         lowercase letter. <a href="#">Learn more.</a>
                     </p>
-
-                    <button>Sign up for GitHub</button>
-
+                    <button type="submit">Sign up for GitHub</button>
                     <p>
                         By clicking “Sign up for GitHub”, you agree to our <a href="#">Terms of Service</a> and <a
                             href="#">Privacy Statement</a>. We’ll occasionally send you account related emails.
                     </p>
-
                 </form>
             </div>
         </div>
-
     </header>
 
 
 
-    <script src="./html and css file/app.js"></script>
+    <script src="./js/app.js"></script>
 
 </body>
 
