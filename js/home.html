@@ -5,29 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <style>
-        body {
-            margin: 0%;
-            padding: 0%;
-        }
-
-        .home-page {
-            width: 100%;
-            text-align: center;
-        }
-
-        .home-page h1 {
-            margin: 25% auto;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="home-page">
-        <h1>Home Page</h1>
-
-    </div>
     <form onsubmit="return dashboard()">
         <h2>Your Profile</h2>
         <h2 id="userN">Name</h2>
@@ -35,7 +15,16 @@
         <h2 id="userP">Phone</h2>
     </form>
 
-    <script src="./app.js"></script>
+    <!-- <script src="./app.js"></script> -->
+    <script>
+var user_Names2 = JSON.parse(localStorage.getItem("name"))
+var user_Email2 = JSON.parse(localStorage.getItem("email"))
+var user_Password2 = JSON.parse(localStorage.getItem("password"))
+
+document.getElementById("userN").innerHTML = "Name :" + " " + user_Names2
+document.getElementById("userE").innerHTML = "Email :" + " " + user_Email2
+document.getElementById("userP").innerHTML = "Password :" + " " + user_Password2
+    </script>
 </body>
 
 </html>
