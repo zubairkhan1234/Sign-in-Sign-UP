@@ -18,12 +18,12 @@
             <p> Sign in to GitHub </p>
         </div>
         <div class="for-form">
-            <form  onsubmit=" return loginform()" >
-                <label >Username or email address</label> <br>
-                <input type="text" id="user-email" required> <br>
-                <label >Password</label>    <span><a href="#">Forgot password?</a></span><br>
-                <input type="password"  id="user-password" required> <br>
-                <button >Sign in</button>
+            <form onsubmit=" return loginform()">
+                <label>Username or email address</label> <br>
+                <input type="email" id="email" required> <br>
+                <label>Password</label> <span><a href="#">Forgot password?</a></span><br>
+                <input type="password" id="password" required> <br>
+                <button>Sign in</button>
             </form>
         </div>
         <div class="for-creating-a-new-account">
@@ -36,59 +36,14 @@
                 <li><a href="">Term</a></li>
                 <li><a href="">Privacy</a></li>
                 <li><a href="">Security</a></li>
-                <li><a href="" > <span> Contact GitHub </span> </a></li>
+                <li><a href=""> <span> Contact GitHub </span> </a></li>
             </ul>
         </div>
     </div>
 
 
-    <!-- <script src="./app.js"></script> -->
-<script>
+    <script src="./app.js"></script>
 
-function loginform() {
-
-    let a = JSON.parse(localStorage.getItem("name"))
-    let b = JSON.parse(localStorage.getItem("email"))
-    let c = JSON.parse(localStorage.getItem("password"))
-
-const userEmail = document.getElementById("user-email").value;
-const userPassword = document.getElementById("user-password").value;
-let isFound = false;
-
-
-for (let i = 0; i < b.length; i++) {
-    for(let j = 0 ; j < c.length ; j++ )
-    if( userEmail === b[i] && userPassword === c[i]) {
-        isFound = i;
-        alert(congratulation)
-        
-    }else{
-        alert("user not found")
-    }
-}
-
-// if (isFound === false) {
-//     alert("user not found")
-// } 
-
-
-
-
-
-
-
-// else if (user_Passwords[isFound] === userPassword) {
-
-//     alert("login success");
-//     window.location.href = "./home.html"
-
-// } else {
-//     alert("Error Password or Username")
-// }
-
-return false;
-}
-</script>
 </body>
 
 </html>

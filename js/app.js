@@ -9,33 +9,36 @@ function signUpInformation() {
     user_Emails.push(document.getElementById("userEmail").value);
     user_Passwords.push(document.getElementById("userPassword").value);
 
-    localStorage.setItem("name", JSON.stringify(user_Names))
-    localStorage.setItem("email", user_Emails)
-    localStorage.setItem("password", user_Passwords)
+    localStorage.setItem("name", JSON.stringify(user_Names));
+    localStorage.setItem("email", JSON.stringify(user_Emails));
+    localStorage.setItem("password", JSON.stringify(user_Passwords));
 
     window.location.href = "./js/login.html"
     alert("login success")
-
-
     return false;
-
 
 }
 
+
+
+
+
+var user_Names2 = JSON.parse(localStorage.getItem("name"))
+var user_Email2 = JSON.parse(localStorage.getItem("email"))
+var user_Password2 = JSON.parse(localStorage.getItem("password"))
+ 
 function loginform() {
 
-    var user_Emails = JSON.parse(localStorage.getItem("user_Emails"))
-    var user_Passwords = JSON.parse(localStorage.getItem("user_Passwords"))
+console.log(user_Email2, user_Password2 )
 
-
-    const userEmail = document.getElementById("user-email").value;
-    const userEmail = document.getElementById("user-password").value;
-    let isFound = false;
+    const userEmail = document.getElementById("email").value;
+    const userPassword = document.getElementById("password").value;
+     isFound = false;
 
 
 
-    for (let i = 0; i < user_Emails.length; i++) {
-        if (userEmail === user_Emails[i]) {
+    for (let i = 0; i < user_Email2.length; i++) {
+        if (user_Email2[i] === userEmail ) {
             isFound = i;
             break;
         }
@@ -43,9 +46,12 @@ function loginform() {
 
     if (isFound === false) {
         alert("user not found")
-    } else if (user_Passwords[isFound] === userEmail) {
+    } else if (user_Password2[isFound] === userPassword) {
 
-        alert("login success");
+        // alert("login success");
+        // console.log(user_Names2)
+        // console.log(user_Email2)
+        // console.log(user_Password2)
         window.location.href = "./home.html"
 
     } else {
