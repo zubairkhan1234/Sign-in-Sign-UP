@@ -5,7 +5,19 @@ var user_Passwords = [];
 
 
 function signUpInformation() {
+    let localName = localStorage.getItem("name");
+    let localEmail = localStorage.getItem("email");
+    let localPass = localStorage.getItem("password");
 
+    if (localName == null && localEmail == null && localPass == null) {
+        user_Names = [];
+        user_Emails = [];
+        user_Passwords = [];
+    }else{
+        user_Names = JSON.parse(localName)
+        user_Emails = JSON.parse(localEmail)
+        user_Passwords = JSON.parse(localPass)
+    }
 
     user_Names.push(document.getElementById("userName").value);
     user_Emails.push(document.getElementById("userEmail").value);
@@ -30,13 +42,14 @@ function loginform() {
 
     const userEmail = document.getElementById("email").value;
     const userPassword = document.getElementById("password").value;
-     isFound = false;
+    isFound = false;
 
 
 
     for (let i = 0; i < user_Email2.length; i++) {
-        if (user_Email2[i] === userEmail ) {
+        if (user_Email2[i] === userEmail) {
             isFound = i;
+            localStorage.setItem("index", isFound);
             break;
         }
     }
@@ -57,9 +70,27 @@ function loginform() {
 
 
     return false;
-}  
+}
 
-document.getElementById("userN").innerHTML = "Name :" + " " + user_Names2
-document.getElementById("userE").innerHTML = "Email :" + " " + user_Email2
-document.getElementById("userP").innerHTML = "Password :" + " " + user_Password2
+
+function userData(){
+
+ let indexData = localStorage.getItem('index');   
+    document.getElementById("userN").innerHTML = "Name :" + " " + user_Names2[indexData]
+    document.getElementById("userE").innerHTML = "Email :" + " " + user_Email2[indexData]
+    document.getElementById("userP").innerHTML = "Password :" + " " + user_Password2[indexData]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
